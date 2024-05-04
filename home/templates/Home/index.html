@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{page}}</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    {{peoples}}
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        </style>
+    <table>
+        <tr>
+          <th>Student No.</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Vote</th>
+        </tr>
+       {% for peoples in peoples %}
+       <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{peoples.name}}</td>
+        <td>{{peoples.age}}</td>
+        <td>
+            {% if peoples.age >= 18 %}
+            👍
+            {% else %}
+            👎
+            {% endif %}
+        </td>
+      </tr>
+    
+       {% endfor %}
+      </table>
+      <a href="contact/">
+        Contact
+    </a>
+    <a href="about/">
+        About
+    </a>
+</body>
+</html>
